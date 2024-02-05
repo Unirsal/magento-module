@@ -1,0 +1,13 @@
+
+
+.Unirsal-logo .title {
+    background-image: url(https://static.toolmart.me/tmp/catalog/product/l/o/logo_1_.png)!important;
+    background-size: 174px 48px!important;
+    background-repeat: no-repeat!important;
+    background-position-y: center!important;
+    background-position-x: 5px!important;
+    width: 100%;
+    height: 66px!important;
+    content: '';
+    background-origin: content-box !important;
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Unirsal/magento-2-whatsapp-order-notification",
+    "description": "Unirsal WhatsApp Basic Extension",
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0|~7.2.0|~7.3.0|~7.4.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.3",
+    "license": [
+        "Commercial"
+    ],
+    "authors": [
+        {
+            "name": "Unirsal",
+            "email": "support@Unirsal.com",
+            "homepage": "https://Unirsal.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Unirsal\\Whatsappbasic\\": ""
+        }
+    }
+}

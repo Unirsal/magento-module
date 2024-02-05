@@ -1,0 +1,50 @@
+<input type="button" name="google_button" id="send_not" value="Send Notification">
+
+
+<script type="text/javascript">  
+(function  () {    
+    require(["jquery"], function($) {
+        $(document).ready(function($) {
+            $("#send_not").on("click", function(e){
+                
+                let x = $('#toolmartmobile_keyG_selectnot ').val();
+                dd[x] = $('#toolmartmobile_keyG_selectnot ').find('option:selected').text();;
+
+                
+               var url = "https://api.prod.unirsal.com/backend-service/v3/whatsapp-session/message"
+
+           /*
+           // rCsnmrVd446r6OEROJzK+XrVHgQ.lqhiMxyvAzE0r69UOf0n38R~RavOys~dMzom
+           // ?key="+$('#whatsappbasic_moduleoption_apikey').val();
+                    "sessionId" => $session,
+                    "recipientPhone" => $phone,
+                    "text" => $message,
+                    "caption" => "",
+                    "base64Data" => "",
+                    "locationLat" => "",
+                    "locationLong" => "",
+                    "type" => "text",
+                    "fileName"=> "",
+
+           */
+
+                $.ajax({
+                    url: url,
+                        type: 'post',
+                        data: {
+                            "sessionId": $('#whatsappbasic_moduleoption_id').val(),
+                            "recipientPhone": $('#whatsappbasic_moduleoption_test_phone').val(),
+                            "text": $('#whatsappbasic_moduleoption_test_template').val(),
+                            "api_key":$('#whatsappbasic_moduleoption_apikey').val()
+                         }
+                         dataType: 'json',
+                         success: function (data) {
+                                console.info(data);
+                                 alert('notification Sent')
+                        }
+                });
+            })
+        }); 
+    });
+})();
+</script>

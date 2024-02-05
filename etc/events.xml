@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_shipment_save_after">
+     		<observer name="Unirsal_sms_shipment_after" instance="Unirsal\Whatsappbasic\Observer\Adminhtml\Shipment" />
+    </event>
+    <event name="checkout_onepage_controller_success_action">
+              <observer name="Unirsal_place_order_after" instance="Unirsal\Whatsappbasic\Observer\Orderplaceafter" />
+    </event>
+
+
+
+</config>

@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/system_file.xsd">
+    <system>
+		<tab id="Unirsal" translate="label" sortOrder="100" class="Unirsal-logo">
+			<label></label>
+		</tab>
+        <section id="whatsappbasic" showInDefault="1" sortOrder="1" showInWebsite="1" showInStore="1">
+			 <tab>Unirsal</tab>
+             <label>WhatsApp Notifications</label>
+          	 <resource>Unirsal_Whatsappbasic::whatsappbasic</resource>
+
+             <group id="moduleoption" showInDefault="1" sortOrder="10">
+					<label>Configer your Number</label>
+					 <field id="baseurl" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+    					<label>Api Url</label>
+					</field>
+
+
+ 					<field id="apikey" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+    					<label>API Key</label>
+					</field>
+
+ 					<field id="id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+    					<label>Instance ID</label>
+					</field>
+
+ 			    	
+				
+ 			      <group id="test" showInDefault="1" sortOrder="30">
+				  	<label>Test Connection</label>
+
+				    <field id="phone" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+    			 		<label>phone</label>
+						 <comment>Please add country code as prefix example: 972XXXXXXXXX</comment>
+				    </field>
+
+				    <field id="template" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					  <label>Test Message</label>
+			    	</field>
+
+					<field id="button" translate="label" type="label" sortOrder="31" showInDefault="1" showInWebsite="0" showInStore="0">
+					<label>Send Notification</label>
+					<frontend_model>Unirsal\Whatsappbasic\Block\Adminhtml\System\Config\Field\Button</frontend_model>
+				    </field>
+			       </group>
+
+			 </group>
+
+			 
+
+			 	 
+			 
+	          <group id="invocecreate" showInDefault="1" sortOrder="30">
+				 <label>Invoice Notification</label>
+				 <field id="enable" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					 <label>Enable</label>
+					 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				 </field>
+				 <field id="template" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					 <label>Invoce Place Notification Text</label>
+					 <depends><field id="enable">1</field></depends>
+					 <comment><![CDATA[<b>Variables : </b>{{var mobilenumber}},{{var order_total}} <a target="_blank" href="https://Unirsal.com/support/docs/magento-2-whatsapp-order-notification-extension/chat-message-variables-objects-list/">All Variables</a> <br /> <b>Objects : </b>order,customer]]></comment>
+				 </field>
+			  </group>
+
+
+			 <group id="orderplace" showInDefault="1" sortOrder="30">
+				 <label>Order Place Notification</label>
+				 <field id="enable" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					 <label>Enable</label>
+					 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				 </field>
+				 <field id="template" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					 <label>Order Place Notification Text</label>
+					 <depends><field id="enable">1</field></depends>
+					 <comment><![CDATA[<b>Variables : </b>{{var mobilenumber}},{{var order_total}} <a target="_blank" href="https://Unirsal.com/support/docs/magento-2-whatsapp-order-notification-extension/chat-message-variables-objects-list/">All Variables</a> <br /> <b>Objects : </b>order,customer]]></comment>
+				 </field>
+			 </group>
+
+			<group id="shipment" showInDefault="1" sortOrder="40">
+					<label>Shipment Notification</label>
+					<field id="enable" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Enable</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				   </field>
+				   <field id="template" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Shipment Notification Text</label>
+					   	<depends><field id="enable">1</field></depends>
+						<comment><![CDATA[<b>Variables : </b>{{var mobilenumber}}  <a target="_blank" href="https://Unirsal.com/support/docs/magento-2-whatsapp-order-notification-extension/chat-message-variables-objects-list/">All Variables</a><br /> <b>Objects : </b>shipment,order,customer <b>Customer Object will not send data for Guest Customer.</b>]]></comment>
+				   </field>
+			</group>
+
+		 </section>
+    </system>
+</config>
