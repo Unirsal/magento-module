@@ -1,0 +1,10 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+
+    <group id="unirsal_crongroup">
+        <job name="unirsal_cronjob" instance="Unirsal\Whatsappbasic\Cron\AbandonedCart" method="execute">
+            <schedule>0 0 * * *</schedule>
+        </job>
+    </group>
+
+ 
+</config>

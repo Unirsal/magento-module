@@ -277,83 +277,22 @@ class Orderplaceafter implements ObserverInterface
 
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        try
-        {
-            if ($this
-                ->helperdata
-                ->isEnabled() && $this
-                ->helperdata
-                ->isOrderPlaceForUserEnabled())
-            {
-                $order_id = $observer->getData('order_ids');
-                $order = $this
-                    ->objectManager
-                    ->create('Magento\Sales\Model\Order')
-                    ->load($order_id[0]);
-                $order_information = $order->loadByIncrementId($order_id[0]);
-                //echo 'working';
-                //exit;
-                $billingAddress = $order_information->getBillingAddress();
-                $mobilenumber = $billingAddress->getTelephone();
-                if ($order->getCustomerId() > 0)
-                {
-                    $customer = $this
-                        ->customerFactory
-                        ->create()
-                        ->load($order_information->getCustomerId());
-                    $mobile = $customer->getMobilenumber();
-                    if ($mobile != '' && $mobile != null)
-                    {
-                        $mobilenumber = $mobile;
-                    }
-                    $this
-                        ->emailfilter
-                        ->setVariables(['order' => $order, 'customer' => $customer, 'order_total' => $order->formatPriceTxt($order->getGrandTotal()) , 'mobilenumber' => $mobilenumber]);
-                }
-                else
-                {
-                    $this
-                        ->emailfilter
-                        ->setVariables(['order' => $order, 'order_total' => $order->formatPriceTxt($order->getGrandTotal()) , 'mobilenumber' => $mobilenumber]);
-                }
-                //var_dump(strlen($mobilenumber));
-                //var_dump(strlen($mobilenumber) == 12);
-                //exit;
-                if (strlen($mobilenumber) == 12)
-                {
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 
-                }
-                else
-                {
-                    //TO DO : Check if the first number 0
-                    if (substr($mobilenumber, 0, 1) === '0')
-                    {
+       
 
-                        $mobilenumber = ltrim($mobilenumber, $mobilenumber[0]);
+        $helper = $objectManager->get('\Unirsal\Whatsappbasic\Helper\Apicall');
 
-                    }
-                    //$mobilenumber = ltrim($mobilenumber, $mobilenumber[0]);
-                    $mobilenumber = $this->country_list[$order->getShippingAddress()
-                        ->getCountryId() ] . $mobilenumber;
-                }
-                $message = $this
-                    ->helperdata
-                    ->getOrderPlaceTemplateForUser();
-                $finalmessage = $this
-                    ->emailfilter
-                    ->filter($message);
-                $type = 'text';
-                $this
-                    ->helperapi
-                    ->callApiUrl($mobilenumber, $finalmessage, $type);
-            }
-            return true;
-        }
-        catch(\Exception $e)
-        {
-            var_dump($e->getMessage());
-            exit;
-            return true;
+        $order = $observer->getEvent()->getOrder();
+        if($helper->getOrderPlaceEnable()){
+            $message = $helper->getOrderPlaceText();
+            $billingAddress = $order->getBillingAddress();
+            $mobilenumber = $billingAddress->getTelephone();
+            $phoneNumber = '962787330259';
+            $messageFinal = $helper->FilterVariableInvoce($message ,$order);
+
+            $res = $helper->sendText($phoneNumber,$messageFinal);
+
         }
     }
 }

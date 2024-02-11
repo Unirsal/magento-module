@@ -6,36 +6,25 @@
     require(["jquery"], function($) {
         $(document).ready(function($) {
             $("#send_not").on("click", function(e){
-                
-                let x = $('#toolmartmobile_keyG_selectnot ').val();
-                dd[x] = $('#toolmartmobile_keyG_selectnot ').find('option:selected').text();;
-
-                
+                                
                var url = "https://api.prod.unirsal.com/backend-service/v3/whatsapp-session/message"
-
-           /*
-           // rCsnmrVd446r6OEROJzK+XrVHgQ.lqhiMxyvAzE0r69UOf0n38R~RavOys~dMzom
-           // ?key="+$('#whatsappbasic_moduleoption_apikey').val();
-                    "sessionId" => $session,
-                    "recipientPhone" => $phone,
-                    "text" => $message,
-                    "caption" => "",
-                    "base64Data" => "",
-                    "locationLat" => "",
-                    "locationLong" => "",
-                    "type" => "text",
-                    "fileName"=> "",
-
-           */
 
                 $.ajax({
                     url: url,
                         type: 'post',
+                        headers: {
+                              'Authorization': $('#whatsappbasic_moduleoption_apikey').val()
+                          },
+
                         data: {
-                            "sessionId": $('#whatsappbasic_moduleoption_id').val(),
-                            "recipientPhone": $('#whatsappbasic_moduleoption_test_phone').val(),
-                            "text": $('#whatsappbasic_moduleoption_test_template').val(),
-                            "api_key":$('#whatsappbasic_moduleoption_apikey').val()
+                            
+                         "type": "text",
+                         "sessionId": $('#whatsappbasic_moduleoption_id').val(),
+                         "recipientPhone": $('#whatsappbasic_moduleoption_test_phone').val(),
+                          "text": {
+                                  "message": $('#whatsappbasic_moduleoption_test_template').val()
+                          }
+ 
                          }
                          dataType: 'json',
                          success: function (data) {

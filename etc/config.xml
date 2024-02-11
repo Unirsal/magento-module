@@ -8,6 +8,29 @@
                   <template>Unirsal Test Message</template>
                 </test>
             </moduleoption>
+
+            <invocecreate>
+                <template>Dear #customerName, your order (#orderIncrementId) has been invoiced. Please don’t hesitate to contact us for any further assistance, and thank you for shopping with us. </template>
+            </invocecreate>
+
+             <order>
+                    <orderplace>
+                         <template> Dear #customerName, Your order number #orderIncrementId has been received successfully .</template>
+                    </orderplace>
+                     <orderonhold>
+                         <template>Dear #customerName , your order #orderIncrementId  has been on hold , Due to many  Attempts to contact you on your phone number, To Unhold the order and proceed the  shipping procedures  please contact us  . </template>
+                    </orderonhold>
+                      <ordercancel>
+                         <template>Dear #name, We regret to inform you that your order #orderIncrementId has been cancelled. We hope to see you again soon. </template>
+                    </ordercancel>
+                      <orderprocessing>
+                         <template>Dear #customerName, your order (#orderIncrementId) has been Shipped. Please don’t hesitate to contact us for any further assistance, and thank you for shopping with us. </template>
+                    </orderprocessing>
+                    <orderconmplete>
+                         <template>Dear #customerName, your order (#orderIncrementId) has been Completed.thank you for shopping with us. </template>
+                    </orderconmplete>
+            </order>
+
         </whatsappbasic>
     </default>
 </config>

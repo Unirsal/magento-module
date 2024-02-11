@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
     <policies>
-        <policy id="img-src">
+        <policy id="connect-src">
             <values>
-                <value id="imgur" type="host">*.imgur.com</value>
+                <value id="unirsal_api" type="host">api.prod.unirsal.com</value>
             </values>
         </policy>
     </policies>
