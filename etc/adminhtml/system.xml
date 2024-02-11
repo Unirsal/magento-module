@@ -47,7 +47,7 @@
 						<field id="enable">1</field>
 					</depends>
 					<comment>
-						<![CDATA[<b>Variables : </b>{{var mobilenumber}},{{var order_total}} <a target="_blank" href="https://Unirsal.com/support/docs/magento-2-whatsapp-order-notification-extension/chat-message-variables-objects-list/">All Variables</a><br /><b>Objects : </b>order,customer]]>
+							<![CDATA[<b>Variables : </b>#orderIncrementId ,#mobilenumber <a target="_blank" href="https://github.com/Unirsal/magento-module/blob/main/GUID.md">]]>
 					</comment>
 				</field>
 			</group>
@@ -65,7 +65,7 @@
 							<field id="enable">1</field>
 						</depends>
 						<comment>
-							<![CDATA[<b>Variables : </b>{{var mobilenumber}},{{var order_total}} <a target="_blank" href="https://Unirsal.com/support/docs/magento-2-whatsapp-order-notification-extension/chat-message-variables-objects-list/">All Variables</a><br /><b>Objects : </b>order,customer]]>
+							<![CDATA[<b>Variables : </b>#orderIncrementId ,#mobilenumber <a target="_blank" href="https://github.com/Unirsal/magento-module/blob/main/GUID.md">]]>
 						</comment>
 					</field>
 				</group>
@@ -81,7 +81,7 @@
 							<field id="enable">1</field>
 						</depends>
 						<comment>
-							<![CDATA[<b>Variables : </b>{{var mobilenumber}},{{var order_total}} <a target="_blank" href="https://Unirsal.com/support/docs/magento-2-whatsapp-order-notification-extension/chat-message-variables-objects-list/">All Variables</a><br /><b>Objects : </b>order,customer]]>
+							<![CDATA[<b>Variables : </b>#orderIncrementId ,#mobilenumber <a target="_blank" href="https://github.com/Unirsal/magento-module/blob/main/GUID.md">]]>
 						</comment>
 					</field>
 				</group>
@@ -97,7 +97,7 @@
 							<field id="enable">1</field>
 						</depends>
 						<comment>
-							<![CDATA[<b>Variables : </b>{{var mobilenumber}},{{var order_total}} <a target="_blank" href="https://Unirsal.com/support/docs/magento-2-whatsapp-order-notification-extension/chat-message-variables-objects-list/">All Variables</a><br /><b>Objects : </b>order,customer]]>
+							<![CDATA[<b>Variables : </b>#orderIncrementId ,#mobilenumber <a target="_blank" href="https://github.com/Unirsal/magento-module/blob/main/GUID.md">]]>
 						</comment>
 					</field>
 				</group>
@@ -113,7 +113,7 @@
 							<field id="enable">1</field>
 						</depends>
 						<comment>
-							<![CDATA[<b>Variables : </b>{{var mobilenumber}},{{var order_total}} <a target="_blank" href="https://Unirsal.com/support/docs/magento-2-whatsapp-order-notification-extension/chat-message-variables-objects-list/">All Variables</a><br /><b>Objects : </b>order,customer]]>
+							<![CDATA[<b>Variables : </b>#orderIncrementId ,#mobilenumber <a target="_blank" href="https://github.com/Unirsal/magento-module/blob/main/GUID.md">]]>
 						</comment>
 					</field>
 				</group>
@@ -129,7 +129,7 @@
 							<field id="enable">1</field>
 						</depends>
 						<comment>
-							<![CDATA[<b>Variables : </b>{{var mobilenumber}},{{var order_total}} <a target="_blank" href="https://Unirsal.com/support/docs/magento-2-whatsapp-order-notification-extension/chat-message-variables-objects-list/">All Variables</a><br /><b>Objects : </b>order,customer]]>
+							<![CDATA[<b>Variables : </b>#orderIncrementId ,#mobilenumber <a target="_blank" href="https://github.com/Unirsal/magento-module/blob/main/GUID.md">]]>
 						</comment>
 					</field>
 				</group>
